@@ -1,0 +1,55 @@
+{
+  "patches": {
+    "pkg:npm/next@15.0.4": {
+      "uuid": "1954f17d-ba75-4135-8c9b-19f6c652286f",
+      "exportedAt": "Wed, 25 Feb 2026 21:22:03 GMT",
+      "files": {
+        "package/dist/esm/server/lib/router-server.js": {
+          "beforeHash": "05be528ff75af8bd47cda8eb3e9ddb40de9d83e7c67f8a2646b7e981e751003c",
+          "afterHash": "53e74812258dc79210e4c8b87b6ad8440a563871872409b5d67bcbbcc8f37536"
+        },
+        "package/dist/esm/server/lib/server-ipc/utils.js": {
+          "beforeHash": "5077810abd18e05448c01c33dc9c5f9e3d4dfa631439e74223c4395ca7ff1b32",
+          "afterHash": "772e3184f35ad1ce48c9262c154a3783d6eb1c59d14bdd3d413950aa590a99d1"
+        },
+        "package/dist/esm/server/web/sandbox/context.js": {
+          "beforeHash": "8fc006502ff97056a809f606549485abf70b9e9e301d5efe53edb4a8310c1b32",
+          "afterHash": "7eabfc10e7cd0b251913535222e56fb0ed8b9cf4ecf3c3e650668d6c8224ee26"
+        },
+        "package/dist/esm/server/web/sandbox/sandbox.js": {
+          "beforeHash": "d79017df846af57b13b2840e414e12cb9ce437de9bae874e8e763c22f73d481d",
+          "afterHash": "eafa6ecb4c56213132f20fb252bdc1124fc7d07dfbf03c0eb5d90514e08b4f75"
+        },
+        "package/dist/server/lib/router-server.js": {
+          "beforeHash": "18588e46f1db29e891cb0847bc31b050b042bd11d7918809fcd038c87d663a0f",
+          "afterHash": "10b5aaffff2f07bf1c446c3f1c0be93912e5a3afd1d919cc62b96bdd0288afa6"
+        },
+        "package/dist/server/lib/server-ipc/utils.js": {
+          "beforeHash": "762f8912d9447875141eee6b36fd953ead712f95398dcc61a22b5caa7470dd2f",
+          "afterHash": "eadb43efdcbd2e05749182b6aed21a91537d2d8ff3d8d708ebcac8b10005ccac"
+        },
+        "package/dist/server/web/sandbox/context.js": {
+          "beforeHash": "861757c483368e814f19d0a11ee93db5f7d68f245964533709fa82b12e4a4008",
+          "afterHash": "df8452af1b45e7fbe7ff52deef5784ad98c95aff3ac1231f4ce892f9620e93ae"
+        },
+        "package/dist/server/web/sandbox/sandbox.js": {
+          "beforeHash": "0c63346fd3ed40b53191630ccf597de591c58409837f024d2a81f8118d611084",
+          "afterHash": "518639fc2b191b19d9b82f895a69510b7fadf8a4c3a652540bd90cc1e5d562d2"
+        }
+      },
+      "vulnerabilities": {
+        "GHSA-f82v-jwr5-mffw": {
+          "cves": [
+            "CVE-2025-29927"
+          ],
+          "summary": "Authorization Bypass in Next.js Middleware",
+          "severity": "CRITICAL",
+          "description": "# Impact\nIt is possible to bypass authorization checks within a Next.js application, if the authorization check occurs in middleware.\n\n# Patches\n* For Next.js 15.x, this issue is fixed in `15.2.3`\n* For Next.js 14.x, this issue is fixed in `14.2.25`\n* For Next.js 13.x, this issue is fixed in 13.5.9\n* For Next.js 12.x, this issue is fixed in 12.3.5\n* For Next.js 11.x, consult the below workaround.\n\n_Note: Next.js deployments hosted on Vercel are automatically protected against this vulnerability._\n\n# Workaround\nIf patching to a safe version is infeasible, we recommend that you prevent external user requests which contain the `x-middleware-subrequest` header from reaching your Next.js application.\n\n## Credits\n\n- Allam Rachid (zhero;)\n- Allam Yasser (inzo_)"
+        }
+      },
+      "description": "",
+      "license": "MIT",
+      "tier": "free"
+    }
+  }
+}
